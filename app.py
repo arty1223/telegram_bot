@@ -9,7 +9,7 @@ if config.ADMIN == "put your own username here":
 	print("put admin username in config.py file")
 	exit()
 bot = telebot.TeleBot(config.TOKEN)
-#print("started")
+
 @bot.message_handler(commands=['enable'])			#флаг для временного отключения бота, работает на глобальных переменных указанных в config.py, 
 def enable(message):								#да глобальные перемнные это плохо, но мне так проще да и ***** впринципе
 	if message.from_user.username != config.ADMIN[1:]:
@@ -61,6 +61,6 @@ def reply_to_any(message):
 		bot.reply_to(message, "🤡")	
 	elif config.FLAG:
 		bot.reply_to(message, random.choice(config.SMILES))
-
+print("started")
 bot.add_custom_filter(custom_filters.ChatFilter())
 bot.infinity_polling()
