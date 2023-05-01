@@ -1,0 +1,12 @@
+[Unit]
+Description=telegram_bot
+After=network.target
+
+[Service]
+Restart=on-failure
+RestartSec=15s
+
+WorkingDirectory=/home/pi/python/telegram_bot/
+ExecStart=bash /home/pi/python/telegram_bot/app.sh
+[Install]
+WantedBy=multi-user.target
