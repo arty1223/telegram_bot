@@ -162,3 +162,4 @@ include/
 lib/
 lib64
 bin/
+config.py
